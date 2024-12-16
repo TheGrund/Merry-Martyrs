@@ -38,24 +38,40 @@
         .welcome {
             text-align: center;
             margin: 50px 0;
-            background: linear-gradient(to bottom, #d71920 33%, #ffffff 33%, #ffffff 66%, #007a3d 66%); /* Palestinian Flag Colors */
-            color: white;
+            background: linear-gradient(to bottom, #000000 33%, #ffffff 33%, #ffffff 66%, #007a3d 66%);
             padding: 50px 20px;
+            position: relative;
+            color: white;
+        }
+        .welcome .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .welcome h1, .welcome p {
             color: white;
+            z-index: 2;
         }
         .welcome button {
+            z-index: 2;
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #007a3d; /* Green */
+            background-color: #d71920; /* Red */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         .welcome button:hover {
-            background-color: #005f2b;
+            background-color: #a3141a;
         }
         .donation, .testimonials, .resources {
             margin-bottom: 40px;
@@ -99,6 +115,7 @@
 <body>
     <!-- Welcome Page -->
     <div class="welcome">
+    <div class="overlay">
         <h1>Welcome to Support Palestine</h1>
         <p>Join us in supporting humanitarian efforts for Palestine.</p>
         <img src="placeholder.jpg" alt="Palestine Image Placeholder" style="max-width: 100%; height: auto;">
