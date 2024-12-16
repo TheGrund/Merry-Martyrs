@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,6 +39,24 @@
         .welcome {
             text-align: center;
             margin: 50px 0;
+            background: linear-gradient(to bottom, #000000 33%, #ffffff 33%, #ffffff 66%, #007a3d 66%);
+            color: white;
+            padding: 50px 20px;
+        }
+        .welcome h1, .welcome p {
+            color: white;
+        }
+        .welcome button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007a3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .welcome button:hover {
+            background-color: #005f2b;
         }
         .donation, .testimonials, .resources {
             margin-bottom: 40px;
@@ -86,7 +104,7 @@
         <p>Join us in supporting humanitarian efforts for Palestine.</p>
         <img src="placeholder.jpg" alt="Palestine Image Placeholder" style="max-width: 100%; height: auto;">
         <br><br>
-        <button onclick="window.location.href='site.html';" style="padding: 10px 20px; font-size: 16px;">Enter Site</button>
+        <button onclick="window.location.href='index.html?page=site';">Enter Site</button>
     </div>
 
     <!-- Site Page -->
@@ -115,17 +133,17 @@
             <div class="donation-item">
                 <img src="food-placeholder.jpg" alt="Food Image Placeholder">
                 <p>Food Donation: Requested Amount $50</p>
-                <a href="donation.html?item=food">Donate</a>
+                <a href="index.html?page=donation&item=food">Donate</a>
             </div>
             <div class="donation-item">
                 <img src="clothes-placeholder.jpg" alt="Clothes Image Placeholder">
                 <p>Clothes Donation: Requested Amount $30</p>
-                <a href="donation.html?item=clothes">Donate</a>
+                <a href="index.html?page=donation&item=clothes">Donate</a>
             </div>
             <div class="donation-item">
                 <img src="supplies-placeholder.jpg" alt="Supplies Image Placeholder">
                 <p>Medical Supplies Donation: Requested Amount $100</p>
-                <a href="donation.html?item=supplies">Donate</a>
+                <a href="index.html?page=donation&item=supplies">Donate</a>
             </div>
         </section>
 
@@ -177,25 +195,28 @@
         <p>&copy; 2024 Support Palestine. All Rights Reserved.</p>
     </footer>
 
-    <script>
+        <script>
         // Toggle between pages
         const sitePage = document.getElementById('site-page');
         const welcomePage = document.querySelector('.welcome');
         const donationPage = document.getElementById('donation-page');
-
-        if (window.location.href.includes('site.html')) {
+    
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+        const item = urlParams.get('item');
+    
+        if (page === 'site') {
             sitePage.style.display = 'block';
             welcomePage.style.display = 'none';
-        } else if (window.location.href.includes('donation.html')) {
+        } else if (page === 'donation') {
             donationPage.style.display = 'block';
             welcomePage.style.display = 'none';
             sitePage.style.display = 'none';
-            const urlParams = new URLSearchParams(window.location.search);
-            const item = urlParams.get('item');
             if (item) {
-                document.getElementById('item').value = item;
+                document.getElementById('item').value = item.charAt(0).toUpperCase() + item.slice(1);
             }
         }
     </script>
+
 </body>
 </html>
