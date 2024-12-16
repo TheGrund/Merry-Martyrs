@@ -1,0 +1,201 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Palestine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #01796f;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background: #025d50;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .welcome {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .donation, .testimonials, .resources {
+            margin-bottom: 40px;
+        }
+        .donation img, .testimonials img {
+            max-width: 100px;
+            margin-right: 10px;
+        }
+        .donation-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .donation-item a {
+            margin-left: auto;
+            background: #01796f;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .donation-item a:hover {
+            background: #025d50;
+        }
+        .testimonials {
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+        .testimonial-item {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #01796f;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div class="welcome">
+        <h1>Welcome to Support Palestine</h1>
+        <p>Join us in supporting humanitarian efforts for Palestine.</p>
+        <img src="placeholder.jpg" alt="Palestine Image Placeholder" style="max-width: 100%; height: auto;">
+        <br><br>
+        <button onclick="window.location.href='site.html';" style="padding: 10px 20px; font-size: 16px;">Enter Site</button>
+    </div>
+
+    <!-- Site Page -->
+    <div class="container" id="site-page" style="display: none;">
+        <header>
+            <h1>Support Palestine</h1>
+        </header>
+
+        <nav>
+            <a href="#resources">Resources</a>
+            <a href="#donation">Donate</a>
+            <a href="#testimonials">Testimonials</a>
+        </nav>
+
+        <section class="resources" id="resources">
+            <h2>Humanitarian Resources</h2>
+            <ul>
+                <li><a href="https://resource-link1.com" target="_blank">Resource Link 1</a></li>
+                <li><a href="https://resource-link2.com" target="_blank">Resource Link 2</a></li>
+                <li><a href="https://resource-link3.com" target="_blank">Resource Link 3</a></li>
+            </ul>
+        </section>
+
+        <section class="donation" id="donation">
+            <h2>Donate</h2>
+            <div class="donation-item">
+                <img src="food-placeholder.jpg" alt="Food Image Placeholder">
+                <p>Food Donation: Requested Amount $50</p>
+                <a href="donation.html?item=food">Donate</a>
+            </div>
+            <div class="donation-item">
+                <img src="clothes-placeholder.jpg" alt="Clothes Image Placeholder">
+                <p>Clothes Donation: Requested Amount $30</p>
+                <a href="donation.html?item=clothes">Donate</a>
+            </div>
+            <div class="donation-item">
+                <img src="supplies-placeholder.jpg" alt="Supplies Image Placeholder">
+                <p>Medical Supplies Donation: Requested Amount $100</p>
+                <a href="donation.html?item=supplies">Donate</a>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-item">
+                <img src="advocate1-placeholder.jpg" alt="Advocate Image Placeholder">
+                <p><strong>Advocate Name 1:</strong> "This initiative is incredible!"</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="advocate2-placeholder.jpg" alt="Advocate Image Placeholder">
+                <p><strong>Advocate Name 2:</strong> "Together, we can make a difference."</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Donation Page -->
+    <div class="container" id="donation-page" style="display: none;">
+        <header>
+            <h1>Make a Donation</h1>
+        </header>
+        <form action="submit-donation" method="post" style="max-width: 600px; margin: auto;">
+            <label for="item">Item:</label>
+            <input type="text" id="item" name="item" value="" readonly style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <label for="amount">Donation Amount (USD):</label>
+            <input type="number" id="amount" name="amount" required style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <label for="card">Credit Card Information:</label>
+            <input type="text" id="card" name="card" placeholder="1234-5678-9012-3456" required style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="month" id="expiry" name="expiry" required style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required style="width: 100%; margin-bottom: 15px; padding: 10px;">
+
+            <button type="submit" style="padding: 10px 20px; background-color: #01796f; color: white; border: none; border-radius: 5px;">Submit Donation</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Support Palestine. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle between pages
+        const sitePage = document.getElementById('site-page');
+        const welcomePage = document.querySelector('.welcome');
+        const donationPage = document.getElementById('donation-page');
+
+        if (window.location.href.includes('site.html')) {
+            sitePage.style.display = 'block';
+            welcomePage.style.display = 'none';
+        } else if (window.location.href.includes('donation.html')) {
+            donationPage.style.display = 'block';
+            welcomePage.style.display = 'none';
+            sitePage.style.display = 'none';
+            const urlParams = new URLSearchParams(window.location.search);
+            const item = urlParams.get('item');
+            if (item) {
+                document.getElementById('item').value = item;
+            }
+        }
+    </script>
+</body>
+</html>
