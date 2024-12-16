@@ -63,6 +63,14 @@
             z-index: 2;
             margin: 10px 0;
         }
+        .welcome img {
+            position: relative;
+            z-index: 2;
+            max-width: 50%; /* Keeps image a reasonable size */
+            height: auto;
+            margin: 20px 0; /* Adds space above and below the image */
+        }
+
         .welcome button {
             position: relative;
             z-index: 2;
@@ -119,12 +127,12 @@
 <body>
     <!-- Welcome Page -->
     <div class="welcome">
-        <h1>Welcome to Support Palestine</h1>
-        <p>Join us in supporting humanitarian efforts for Palestine.</p>
-        <img src="Hamas1.jpg" alt="Palestine Image Placeholder" style="max-width: 100%; height: auto;">
-        <br><br>
-        <button onclick="window.location.href='index.html?page=site';">Enter Site</button>
-    </div>
+    <h1>Welcome to Support Palestine</h1>
+    <img src="Hamas1.jpg" alt="Palestine Image Placeholder">
+    <p>Join us in supporting humanitarian efforts for Palestine.</p>
+    <br>
+    <button onclick="window.location.href='index.html?page=site';">Enter Site</button>
+</div>
 
     <!-- Site Page -->
     <div class="container" id="site-page" style="display: none;">
